@@ -59,7 +59,9 @@ getUsers()
 
 list.addEventListener('click', event => {
   let bookId = parseInt(event.target.id)
-  let zeBook = localBooks.find(book => book.id === bookId)
-  showPanel.innerHTML = ``
-  renderBookInfo(zeBook)
+  if (bookId > 0) {
+    let zeBook = localBooks.find(book => book.id === bookId)
+    showPanel.innerHTML = ``
+    renderBookInfo(zeBook)
+  }
 })
